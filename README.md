@@ -1,2 +1,1 @@
 # ReservoirComputingLorenz
-# ReservoirComputingLorenz

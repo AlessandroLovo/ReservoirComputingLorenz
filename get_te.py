@@ -1,6 +1,6 @@
 import numpy as np
 
-def get_te(prediction_data, test_data, eps=0.1, dt=0.02, error_version='normsquare'):
+def get_te(prediction_data, test_data, eps=0.1, dt=0.02, error_version='normsquare', verbose=True):
     '''
     Compute the time t_e when the prediction exceeds the tolerance error eps.
     
@@ -32,6 +32,7 @@ def get_te(prediction_data, test_data, eps=0.1, dt=0.02, error_version='normsqua
         
     N_te = np.where(error > eps)[0][0]
     
-    print('Error exceeds threshold value {} after {} time steps --> t_e = {:.3f}.'.format(eps, N_te, N_te*dt))
+    if verbose:
+        print('Error exceeds threshold value {} after {} time steps --> t_e = {:.3f}.'.format(eps, N_te, N_te*dt))
     
     return N_te * dt
